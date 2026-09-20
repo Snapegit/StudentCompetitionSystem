@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.BisaixinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.BisaixinxiEntity" id="bisaixinxiMap">
+        <result property="bisaimingcheng" column="bisaimingcheng"/>
+        <result property="bisaileixing" column="bisaileixing"/>
+        <result property="bisaitupian" column="bisaitupian"/>
+        <result property="bisaishijian" column="bisaishijian"/>
+        <result property="bisaididian" column="bisaididian"/>
+        <result property="bisaiguize" column="bisaiguize"/>
+        <result property="bisaineirong" column="bisaineirong"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="jiaoshixingming" column="jiaoshixingming"/>
+        <result property="reversetime" column="reversetime"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.BisaixinxiView" >
+
+		SELECT  bisaixinxi.* FROM bisaixinxi  bisaixinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.BisaixinxiView" >
+		SELECT * FROM bisaixinxi  bisaixinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
